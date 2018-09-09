@@ -9,7 +9,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "webpack"
+    "start": "webpack --mode development",
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
