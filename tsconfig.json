@@ -4,7 +4,8 @@
     "moduleResolution": "node",
     "noEmit": true,
     "strict": true,
-    "jsx": "react"
+    "jsx": "react",
+    "isolatedModules": true
   },
   "include": [
     "src"
