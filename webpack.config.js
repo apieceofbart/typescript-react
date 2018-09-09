@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = function (env) {
   return {
     mode: env,
-    entry: './src/index.js',
+    entry: './src/index.ts',
     output: {
       path: `${__dirname}/dist`,
       filename: 'main.bundle.js'
@@ -12,7 +12,7 @@ module.exports = function (env) {
     module: {
       rules: [
         {
-          test: /\.js$/,
+          test: /\.ts$/,
           exclude: /node_modules/,
           use: {
             loader: 'babel-loader'
