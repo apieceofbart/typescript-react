@@ -8,6 +8,7 @@ module.exports = function (env) {
       path: `${__dirname}/dist`,
       filename: 'main.bundle.js'
     },
+    devtool: 'inline-source-map',
     module: {
       rules: [
         {
