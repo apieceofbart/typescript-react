@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Routes } from './Routes';
+import { Nav } from './Nav';
 type AppProps = {
   greetings?: string;
 }
@@ -11,7 +13,13 @@ class App extends React.Component<AppProps> {
   }
   render() {
     return (
-      <h1>{this.props.greetings}</h1>
+      <Router>
+        <div>
+          <Nav />
+          <h1>{this.props.greetings}</h1>
+          <Routes />
+        </div>
+      </Router>
     )
   }
 }
