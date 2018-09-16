@@ -3,7 +3,7 @@ This repo contains basic React + Typescript configuration. Master branch contain
 
 ## Flavours
 
-1. [React-router](./tree/react-router/)
+1. [React-router](../../tree/react-router/)
 2. Auth0 (Todo)
 3. Redux (Todo)
 
