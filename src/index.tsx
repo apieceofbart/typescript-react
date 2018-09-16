@@ -1,11 +1,17 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import { Routes } from './Routes';
 import { Nav } from './Nav';
+import history from './history';
+import Auth from './Auth/Auth';
+
+export const auth = new Auth();
+
 type AppProps = {
   greetings?: string;
 }
+
 
 class App extends React.Component<AppProps> {
   static defaultProps = {
@@ -13,11 +19,11 @@ class App extends React.Component<AppProps> {
   }
   render() {
     return (
-      <Router>
+      <Router history={history}>
         <div>
           <Nav />
           <h1>{this.props.greetings}</h1>
-          <Routes />
+          <Routes auth={auth} />
         </div>
       </Router>
     )

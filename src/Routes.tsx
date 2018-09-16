@@ -1,12 +1,28 @@
 import * as React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, RouteComponentProps } from 'react-router-dom';
+import Auth from './Auth/Auth';
+import { Home } from './Home';
+import { App } from './App';
 
-export class Routes extends React.Component {
+type RoutesProps = {
+  auth: Auth;
+}
+
+export class Routes extends React.Component<RoutesProps> {
+  handleAuthentication = (props: RouteComponentProps) => {
+    if (/access_token|id_token|error/.test(props.location.hash)) {
+      this.props.auth.handleAuthentication();
+    }
+  }
   render() {
     return (
       <>
-        <Route exact path="/" component={() => <>Home</>} />
-        <Route path="/login" component={() => <>Login</>} />
+        <Route path="/" render={(props: RouteComponentProps) => <App auth={this.props.auth} {...props} />} />
+        <Route path="/home" render={(props: RouteComponentProps) => <Home auth={this.props.auth} {...props} />} />
+        <Route path="/callback" render={(props: RouteComponentProps) => {
+          this.handleAuthentication(props);
+          return <>Loading</>
+        }} />
       </>
     )
   }
