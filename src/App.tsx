@@ -11,11 +11,11 @@ export class App extends React.Component<AppProps> {
     this.props.history.replace(`/${route}`)
   }
 
-  login() {
+  login = () => {
     this.props.auth.login();
   }
 
-  logout() {
+  logout = () => {
     this.props.auth.logout();
   }
 
