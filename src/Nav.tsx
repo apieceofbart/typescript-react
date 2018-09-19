@@ -6,10 +6,10 @@ export class Nav extends React.Component {
     return (
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">Main</Link>
         </li>
         <li>
-          <Link to="/login">Login</Link>
+          <Link to="/home">Home</Link>
         </li>
       </ul>
     )

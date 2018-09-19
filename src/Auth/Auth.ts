@@ -1,6 +1,6 @@
 import history from '../history';
 import * as auth0 from 'auth0-js';
-import { AUTH_CONFIG } from '../../auth0-variables';
+import { AUTH_CONFIG } from '../../../auth0-variables';
 
 export default class Auth {
   auth0 = new auth0.WebAuth({
