@@ -18,7 +18,6 @@ export class Routes extends React.Component<RoutesProps> {
     return (
       <>
         <Route path="/" render={(props: RouteComponentProps) => <App auth={this.props.auth} {...props} />} />
-        <Route path="/home" render={(props: RouteComponentProps) => <Home auth={this.props.auth} {...props} />} />
         <Route path="/callback" render={(props: RouteComponentProps) => {
           this.handleAuthentication(props);
           return <>Loading</>

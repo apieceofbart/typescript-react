@@ -21,7 +21,7 @@ class App extends React.Component<AppProps> {
     return (
       <Router history={history}>
         <div>
-          <Nav />
+          <Nav auth={auth} />
           <h1>{this.props.greetings}</h1>
           <Routes auth={auth} />
         </div>
